@@ -36,7 +36,7 @@ namespace Dźwięki_Zwierząt
 
         private void PlayAudioButton_Click(object sender, RoutedEventArgs e)
         {
-           // KwakMediaElement.Play();   
+            KwakMediaElement.Play();   
         }
 
 

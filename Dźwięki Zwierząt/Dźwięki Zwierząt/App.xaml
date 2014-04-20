@@ -8,6 +8,14 @@
     <!--Application Resources-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:Dźwięki_Zwierząt" x:Key="LocalizedStrings"/>
+        <Style x:Name="MyTitleText"
+               BasedOn="{StaticResource PhoneTextBlockBase}" 
+               TargetType="TextBlock">
+            <Setter Property="FontFamily" 
+                    Value="Verdana"/>
+            <Setter Property="FontSize"
+                    Value="64"/>
+        </Style>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
