@@ -125,6 +125,20 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Audio\Animals\Cat Kitten.wav" />
+    <Content Include="Assets\Audio\Animals\Cat Meow.wav" />
+    <Content Include="Assets\Audio\Animals\Chimpanzee.wav" />
+    <Content Include="Assets\Audio\Animals\Cow.wav" />
+    <Content Include="Assets\Audio\Animals\Crickets.wav" />
+    <Content Include="Assets\Audio\Animals\Dog.wav" />
+    <Content Include="Assets\Audio\Animals\Dolphin.wav" />
+    <Content Include="Assets\Audio\Animals\Duck.wav" />
+    <Content Include="Assets\Audio\Animals\Horse Gallop.wav" />
+    <Content Include="Assets\Audio\Animals\Horse Walk.wav" />
+    <Content Include="Assets\Audio\Animals\Lion.wav" />
+    <Content Include="Assets\Audio\Animals\Pig.wav" />
+    <Content Include="Assets\Audio\Animals\Rooster.wav" />
+    <Content Include="Assets\Audio\Animals\Sheep.wav" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -147,6 +161,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

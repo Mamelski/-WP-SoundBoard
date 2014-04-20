@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Dźwięki_Zwierząt.Resources;
+using System.Windows.Media;
 
 namespace Dźwięki_Zwierząt
 {
@@ -17,10 +18,27 @@ namespace Dźwięki_Zwierząt
         public MainPage()
         {
             InitializeComponent();
+            Button myButton = new Button();
+            myButton.Name = "MiałButton";
+            myButton.Height = 100;
+            //myButton.Height = 200;
+            //myButton.Width = 200;
+            myButton.VerticalAlignment = System.Windows.VerticalAlignment.Top;
+            //myButton.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            myButton.Background = new SolidColorBrush(Colors.Red);
+            myButton.Content = "Miał";
+            ContentPanel.Children.Add(myButton);
 
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+            //myButton.Margin = new Thickness(210, 0, 0, 0);
+
+            myButton.Click += PlayAudioButton_Click;
         }
+
+        private void PlayAudioButton_Click(object sender, RoutedEventArgs e)
+        {
+            KwakMediaElement.Play();   
+        }
+
 
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

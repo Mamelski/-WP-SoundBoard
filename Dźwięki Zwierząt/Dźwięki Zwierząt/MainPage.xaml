@@ -19,7 +19,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
@@ -28,67 +27,21 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-    <!-- Star Sizing-->
-            <!--
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
-            
-            <Rectangle Fill="Azure" Grid.Row="0" />
-            <Rectangle Fill="BlanchedAlmond" Grid.Row="1" />
-            <Rectangle Fill="DarkOrange" Grid.Row="2" />
-            -->
-    <!-- Grid Rows and Columns-->
-            <!--
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock>1</TextBlock>
-            <TextBlock Grid.Column="1">2</TextBlock>
-            <TextBlock Grid.Column="2">3</TextBlock>
-
-            <TextBlock Grid.Row="1">4</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1">5</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="2">6</TextBlock>
-            
-            <TextBlock Grid.Row="2">7</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="1">8</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="2">9</TextBlock>
-            -->
-            
-    <!-- Alignment and Margins-->
-            <!--
-            <Rectangle Fill="Azure"
-                       Width="100" Height="100"
-                       HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Rectangle Fill="OldLace"
-                       Width="100" Height="100"
-                       HorizontalAlignment="Right" VerticalAlignment="Bottom" />
-            <Rectangle Fill="Gold"
-                       Width="100" Height="100"
-                       HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Rectangle Fill="LightGreen"
-                       Width="100" Height="100"
-                       HorizontalAlignment="Left" VerticalAlignment="Top" 
-                       Margin="100,100"/>
-            <Rectangle Fill="Khaki"
-                       Width="100" Height="100"
-                       HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                       Margin="50,0,0,50"/>
-            -->
-            
-        </Grid>
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Name="PlayAudioButton"
+                    Height="100"
+                    VerticalAlignment="Top"
+                    Click="PlayAudioButton_Click"
+                    Background="Red"
+                    >               
+                Kwak
+                </Button>
+            <MediaElement x:Name="KwakMediaElement"
+                          Source="/Assets/Audio/Animals/Duck.wav"
+                          Volume="1"
+                          AutoPlay="False"
+                          />            
+        </StackPanel>
 
     </Grid>
 
