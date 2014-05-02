@@ -15,6 +15,5 @@ namespace SoundBoard.ViewModels
 
         public List<SoundData>  Items { get; set; }
         public string Title { get; set; }
-
     }
 }

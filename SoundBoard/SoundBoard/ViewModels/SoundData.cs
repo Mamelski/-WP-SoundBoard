@@ -10,6 +10,5 @@ namespace SoundBoard.ViewModels
     {
         public string Title { get; set; }
         public String FilePath { get; set; }
-
     }
 }
