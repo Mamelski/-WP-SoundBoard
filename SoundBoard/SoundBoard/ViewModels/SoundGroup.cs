@@ -8,12 +8,12 @@ namespace SoundBoard.ViewModels
 {
     public class SoundGroup
     {
-        public SoundGroup()
+        public SoundGroup() 
         {
             Items = new List<SoundData>();
         }
 
-        public List<SoundData>  Items { get; set; }
+        public List<SoundData> Items { get; set; }
         public string Title { get; set; }
     }
 }

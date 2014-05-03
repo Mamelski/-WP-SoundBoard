@@ -2,7 +2,7 @@
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US"/>
-  <App xmlns="" ProductID="{69496500-880f-4cac-968b-e483d3749009}" Title="SoundBoard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="SoundBoard author" Description="Sample description" Publisher="SoundBoard" PublisherID="{6f3e2b1f-49fe-4845-b6a4-26587d6742df}">
+  <App xmlns="" ProductID="{e4aeddcb-1e68-4115-a205-d6ddb45a4164}" Title="SoundBoard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="SoundBoard author" Description="Sample description" Publisher="SoundBoard" PublisherID="{9a212e41-18d5-4a6c-b400-64bda25310fd}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>

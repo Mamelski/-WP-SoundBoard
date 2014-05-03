@@ -58,6 +58,7 @@ namespace SoundBoard.ViewModels
         /// <summary>
         /// Creates and adds a few ItemViewModel objects into the Items collection.
         /// </summary>
+        /*
         public void LoadData()
         {
             // Sample data; replace with real data
@@ -80,6 +81,7 @@ namespace SoundBoard.ViewModels
 
             this.IsDataLoaded = true;
         }
+        */
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)
