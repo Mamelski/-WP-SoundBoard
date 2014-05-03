@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using SoundBoard.Resources;
+using SoundBoard.ViewModels;
 
 namespace SoundBoard
 {
@@ -32,6 +33,27 @@ namespace SoundBoard
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LongListSelector selector = sender as LongListSelector;
+
+            if (selector == null)
+            {
+                return;
+            }
+
+            SoundData data = selector.SelectedItem as SoundData;
+
+            if (data == null)
+            {
+                return;
+            }
+
+            AudioPlayer.Source = new Uri(data.FilePath, UriKind.RelativeOrAbsolute);
+
+            selector.SelectedItem = null;
         }
 
         // Sample code for building a localized ApplicationBar

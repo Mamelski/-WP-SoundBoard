@@ -37,27 +37,11 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
-        <!--Pivot Control-->
+            
+        <MediaElement
+            Name="AudioPlayer"
+            Volume="1" />
+   
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, 
                                         Source={StaticResource LocalizedStrings}}">
 
@@ -68,16 +52,18 @@
                     LayoutMode="Grid"
                     GridCellSize="150,150"
                     ItemTemplate="{StaticResource SoundTileDataTemplate}"
+                    SelectionChanged="LongListSelector_SelectionChanged"
                     />
             </phone:PivotItem>
 
             <phone:PivotItem Header="{Binding Cartoons.Title}">
                 <phone:LongListSelector 
                     Margin="0,0,-12,0" 
-                    ItemsSource="{Binding Cartoons.Items}"
+                    ItemsSource ="{Binding Cartoons.Items}"
                     LayoutMode="Grid"
                     GridCellSize="150,150"
                     ItemTemplate="{StaticResource SoundTileDataTemplate}"
+                    SelectionChanged="LongListSelector_SelectionChanged"
                     />
             </phone:PivotItem>
 
@@ -88,6 +74,7 @@
                     LayoutMode="Grid"
                     GridCellSize="150,150"
                     ItemTemplate="{StaticResource SoundTileDataTemplate}"
+                    SelectionChanged="LongListSelector_SelectionChanged"
                     />
             </phone:PivotItem>
 
@@ -98,6 +85,7 @@
                     LayoutMode="Grid"
                     GridCellSize="150,150"
                     ItemTemplate="{StaticResource SoundTileDataTemplate}"
+                    SelectionChanged="LongListSelector_SelectionChanged"
                     />
             </phone:PivotItem>
 
@@ -108,6 +96,7 @@
                     LayoutMode="Grid"
                     GridCellSize="150,150"
                     ItemTemplate="{StaticResource SoundTileDataTemplate}"
+                    SelectionChanged="LongListSelector_SelectionChanged"
                     />
             </phone:PivotItem>
 
