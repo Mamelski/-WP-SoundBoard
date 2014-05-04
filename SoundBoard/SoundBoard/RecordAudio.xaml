@@ -32,8 +32,14 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            
+            <MediaElement x:Name="AudioPlayer"
+                          AutoPlay="False"/>
+            
             <StackPanel>
-                <ToggleButton Content="Record"/>
+                <ToggleButton Content="Record" 
+                              Checked="RecordaudioChecked"
+                              Unchecked="RecordAudioUnchecked"/>
                 <Grid Width="200"
                       Height="200">
                     <Ellipse Fill="{StaticResource PhoneAccentBrush}" />
@@ -59,7 +65,7 @@
                                Width="20" 
                                HorizontalAlignment="Left" Fill="{StaticResource PhoneForegroundBrush}" Margin="20,0,0,0" />
                 </Grid>
-                <Button Content="Play"/>
+                <Button  Name="PlayAudio" Content="Play" Click="PlayAudioClick"/>
             </StackPanel>
         </Grid>
     </Grid>
