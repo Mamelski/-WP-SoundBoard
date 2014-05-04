@@ -72,6 +72,7 @@ namespace SoundBoard
             recordAudioAppBar.Text = AppResources.AppBarRecord;
 
             recordAudioAppBar.Click += recordAudioAppBar_Click;
+
             // Create a new menu item with the localized string from AppResources.
             ApplicationBarMenuItem abutAppBar = 
                 new ApplicationBarMenuItem();
@@ -90,7 +91,7 @@ namespace SoundBoard
 
         void recordAudioAppBar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new Uri("/RecordAudio.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
