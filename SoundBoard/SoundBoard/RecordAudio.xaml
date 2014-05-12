@@ -38,7 +38,7 @@
             
             <StackPanel>
                 <ToggleButton Content="Record" 
-                              Checked="RecordaudioChecked"
+                              Checked="RecordAudioChecked"
                               Unchecked="RecordAudioUnchecked"/>
                 <Grid Width="200"
                       Height="200">

@@ -12,6 +12,9 @@ using Coding4Fun.Toolkit.Audio;
 using Coding4Fun.Toolkit.Audio.Helpers;
 using System.IO;
 using System.IO.IsolatedStorage;
+using Coding4Fun.Toolkit.Controls;
+using SoundBoard.ViewModels;
+using Newtonsoft.Json;
 
 namespace SoundBoard
 {
@@ -48,10 +51,51 @@ namespace SoundBoard
 
         void recordAudioAppBar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            InputPrompt fileName = new InputPrompt();
+
+            fileName.Title = "Sound name";
+            fileName.Message = "Druzd Misiu jaki dźwięk z siebie wydałaś";
+
+            fileName.Completed += fileNameCompleted;
+
+            fileName.Show();
         }
 
-        private void RecordaudioChecked(object sender, RoutedEventArgs e)
+        void fileNameCompleted(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            if (e.PopUpResult == PopUpResult.Ok)
+            {
+                // stworzenei SoundData
+                SoundData soundData = new SoundData();
+                soundData.FilePath = string.Format("/customAudio/{0}.wav", DateTime.Now.ToFileTime());
+                soundData.Title = e.Result;
+
+                // Zapiswyanie pliku
+                using(IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication()){
+                    if (!isoStore.DirectoryExists("/customAudio/"))
+                    {
+                        isoStore.CreateDirectory("/customAudio/");
+                    }
+
+                    isoStore.MoveFile(tempFileName, soundData.FilePath);
+                }
+
+                var data = JsonConvert.SerializeObject(App.ViewModel.CustomSounds);
+
+                IsolatedStorageSettings.ApplicationSettings[SoundModel.CustomSoundKey] = data;
+                IsolatedStorageSettings.ApplicationSettings.Save();
+
+                App.ViewModel.CustomSounds.Items.Add(soundData);
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.RelativeOrAbsolute));
+                // create a sound data object
+                // save wav file into directory
+                // add sounddata object to App.ViewModel.Customsounds
+                // Save list of Custom sounds
+                //
+            }
+        }
+
+        private void RecordAudioChecked(object sender, RoutedEventArgs e)
         {
             PlayAudio.IsEnabled = false;
             recorder.Start();
@@ -62,6 +106,7 @@ namespace SoundBoard
             recorder.Stop();
             saveTempAudio(recorder.Buffer);
             PlayAudio.IsEnabled = true;
+            ApplicationBar.IsVisible = true;
         }
 
         private void saveTempAudio(MemoryStream buffer)

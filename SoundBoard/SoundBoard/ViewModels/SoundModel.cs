@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.IO.IsolatedStorage;
+using Newtonsoft.Json;
 
 namespace SoundBoard.ViewModels
 {
@@ -15,6 +17,7 @@ namespace SoundBoard.ViewModels
         public SoundGroup Taunts { get; set; }
         public SoundGroup Warnings { get; set; }
 
+        public const string CustomSoundKey = "CustomSound";
         public bool IsDataLoaded { get; set; }
 
         public void LoadData() 
@@ -23,8 +26,25 @@ namespace SoundBoard.ViewModels
             Cartoons = CreateGroup("cartoons");
             Taunts = CreateGroup("taunts");
             Warnings = CreateGroup("warnings");
+            CustomSounds = LoadCustomSounds();
 
             IsDataLoaded = true;
+        }
+
+        private SoundGroup LoadCustomSounds()
+        {
+            SoundGroup data;
+            string dataFromAppSettings;
+
+            if(IsolatedStorageSettings.ApplicationSettings.TryGetValue(CustomSoundKey, out dataFromAppSettings)){
+                data = JsonConvert.DeserializeObject<SoundGroup>(dataFromAppSettings);
+            }
+            else{
+                data =  new SoundGroup{Title = "Druzdy"};
+            }
+
+            return data;
+
         }
 
         private SoundGroup CreateGroup(string groupName)
