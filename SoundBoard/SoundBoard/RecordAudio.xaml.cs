@@ -53,7 +53,7 @@ namespace SoundBoard
         {
             InputPrompt fileName = new InputPrompt();
 
-            fileName.Title = "Sound name";
+            fileName.Title = "Kocham Cię <3";
             fileName.Message = "Druzd Misiu jaki dźwięk z siebie wydałaś";
 
             fileName.Completed += fileNameCompleted;
@@ -98,6 +98,8 @@ namespace SoundBoard
         private void RecordAudioChecked(object sender, RoutedEventArgs e)
         {
             PlayAudio.IsEnabled = false;
+            ApplicationBar.IsVisible = false;
+            RotateCircle.Begin();
             recorder.Start();
         }
 
@@ -107,6 +109,7 @@ namespace SoundBoard
             saveTempAudio(recorder.Buffer);
             PlayAudio.IsEnabled = true;
             ApplicationBar.IsVisible = true;
+            RotateCircle.Stop();
         }
 
         private void saveTempAudio(MemoryStream buffer)
